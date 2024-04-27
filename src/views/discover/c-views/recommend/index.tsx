@@ -1,12 +1,39 @@
-import { memo } from 'react'
+import httpRequest from '@/service'
+import { memo, useEffect, useState } from 'react'
 import type { FC, ReactNode } from 'react'
 
 interface IProps {
   children?: ReactNode
 }
 
+interface IDataRoot {
+  bannerBizType: string
+  encodeId: string
+  exclusive: boolean
+  imageUrl: string
+  scm: string
+  targetId: number
+  targetType: number
+  titleColor: string
+  typeTitle: string
+}
+
 const Recommend: FC<IProps> = () => {
-  return <div>Recommend</div>
+  const [banners, setbanners] = useState<IDataRoot[]>([])
+
+  useEffect(() => {
+    httpRequest.get({ headers: {}, url: '/banner' }).then((res) => {
+      setbanners(res.banners)
+    })
+  }, [])
+
+  return (
+    <div>
+      {banners.map((item) => {
+        return <div key={item.encodeId}>{item.typeTitle}</div>
+      })}
+    </div>
+  )
 }
 
 export default memo(Recommend)
