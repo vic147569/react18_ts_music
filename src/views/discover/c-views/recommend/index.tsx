@@ -30,7 +30,7 @@ const Recommend: FC<IProps> = () => {
   return (
     <div>
       {banners.map((item) => {
-        return <div key={item.encodeId}>{item.typeTitle}</div>
+        return <div key={item.scm}>{item.typeTitle}</div>
       })}
     </div>
   )
