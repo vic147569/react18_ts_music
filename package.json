@@ -1,7 +1,7 @@
 {
   "name": "react18_ts_music",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite --mode dev",
@@ -15,7 +15,8 @@
     "prettier": "prettier --write .",
     "prepare": "husky install",
     "commit": "cz",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "release": "standard-version"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.3",
@@ -51,6 +52,7 @@
     "husky": "^8.0.0",
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
+    "standard-version": "^9.5.0",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.2.2",
     "typescript-eslint": "^7.7.1",
