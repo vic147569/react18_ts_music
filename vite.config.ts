@@ -8,11 +8,11 @@ export default defineConfig({
   server: {
     port: 8080,
     proxy: {
-      // '/': {
-      //   target: 'http://codercba.com:9002',
-      //   changeOrigin: false,
-      //   rewrite: (path) => path.replace('/api', '')
-      // }
+      '/api': {
+        target: 'http://codercba.com:9002',
+        changeOrigin: true,
+        rewrite: (path) => path.replace('/api', '')
+      }
     }
   },
   resolve: {
